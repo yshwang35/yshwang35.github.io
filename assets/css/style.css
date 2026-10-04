@@ -306,20 +306,20 @@ span.highlight {
 
 .intro-text {
   padding: 2.5%;
-  width: 75%;
+  width: 66%;
   vertical-align: middle;
 }
 
 .intro-photo {
   padding: 2.5%;
-  width: 25%;
-  max-width: 25%;
+  width: 34%;
+  max-width: 34%;
 }
 
 .intro-photo img {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -566,7 +566,7 @@ tr.paper:focus-within .two {
   }
 
   .intro-photo {
-    max-width: 140px;
+    max-width: 200px;
     margin: 0 auto;
   }
 
