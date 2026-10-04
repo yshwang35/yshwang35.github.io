@@ -448,8 +448,13 @@ tr.paper:focus-within .two {
   gap: 12px;
 }
 
-.exp-advisor {
+/* Gray sub-line under an entry (advisor, instructor) */
+.sub {
   color: var(--muted);
+}
+
+.entry + .entry {
+  margin-top: 6px;
 }
 
 .dated .date {

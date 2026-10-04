@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2026100401">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2026100402">
     <script>
       // Apply the theme before first paint: saved choice, else the OS preference
       (function () {
@@ -103,6 +103,62 @@
             </tr>
           </tbody></table>
 
+          <!-- =========================================================
+               3. Research Experience
+               ---------------------------------------------------------
+               로고: assets/logos/<이름>.png 를 넣으면 회색 이니셜 칸 대신 표시됨.
+               칸은 16:9 (144x81). 흰 배경 16:9 캔버스(예: 480x270)에 여백을 두고 넣으면 칸에 꽉 참.
+                 snu-dial  Seoul National University + DIAL Lab
+                 kisti     KISTI
+                 etri      ETRI
+
+               새 기관 추가 시 <tr class="exp"> ... </tr> 블록 하나를 복사해서
+               logo 칸의 이니셜과 data-src 이름만 바꾸면 됨.
+               ========================================================= -->
+          <table class="block"><tbody>
+            <tr>
+              <td class="section-head">
+                <h2>Research Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table class="block exp-list"><tbody>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>SNU</span><img data-src="assets/logos/snu-dial" alt="Seoul National University and DIAL Lab logos"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://en.snu.ac.kr/"><strong>Seoul National University</strong></a>, <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>
+                <div class="dated"><span>Research Intern, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span> <span class="date">Aug 2024 &ndash; Feb 2025</span></div>
+                <div class="sub">Advisor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
+              </td>
+            </tr>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>KISTI</span><img data-src="assets/logos/kisti" alt="KISTI logo"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://www.kisti.re.kr/eng/"><strong>Korea Institute of Science and Technology Information (KISTI)</strong></a>
+                <div class="dated"><span>Research Assistant, Technology Commercialization Research Center</span> <span class="date">Feb 2024 &ndash; May 2024</span></div>
+                <div class="sub">Advisor: Dr. Yunjeong Choi</div>
+              </td>
+            </tr>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>ETRI</span><img data-src="assets/logos/etri" alt="ETRI logo"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://www.etri.re.kr/eng/main/main.etri"><strong>Electronics and Telecommunications Research Institute (ETRI)</strong></a>
+                <div class="dated"><span>Research Intern, Fiscal and Economic Policy Intelligence Research Center</span> <span class="date">Jul 2023 &ndash; Aug 2023</span></div>
+                <div class="sub">Advisor: Dr. Yeonhee Lee</div>
+              </td>
+            </tr>
+
+          </tbody></table>
+
           <table class="block"><tbody>
             <tr>
               <td class="section-head">
@@ -115,7 +171,7 @@
           </tbody></table>
 
           <!-- =========================================================
-               3. Publications
+               4. Publications
                ---------------------------------------------------------
                한 편 = <tr class="paper"> ... </tr> 블록 하나.
                강조하고 싶은 논문은 class="paper highlight-row".
@@ -152,7 +208,7 @@
               <td class="paper-text">
                 <a href="https://dl.acm.org/doi/10.1145/3770855.3818984"><span class="papertitle">Redefining Maritime Anomaly Detection via Equation-Grounded Synthetic Anomalies</span></a>
                 <br>
-                <strong>Youngseok Hwang</strong>*, S. Bae*, D. Lee, J. Seo, J. Kim, W. Lee, H. Park&dagger;
+                <strong>Youngseok Hwang</strong>*, Sungho Bae*, Dohun Lee, Jaeeun Seo, Jeehong Kim, <a href="https://scholar.google.com/citations?user=wNTzAlMAAAAJ">Wonhee Lee</a>, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>KDD</em> (AI for Sciences Track), 2026 &nbsp;<span class="tag-oral">(Oral Presentation)</span>
                 <br>
@@ -171,7 +227,7 @@
               <td class="paper-text">
                 <a href="https://icml.cc/virtual/2026/73608"><span class="papertitle">Domain-Prior-Regularized Graph Modeling for Anomaly Detection in Cyber-Physical Systems</span></a>
                 <br>
-                <strong>Youngseok Hwang</strong>, J. Kwon, G. Lee, H. Park&dagger;
+                <strong>Youngseok Hwang</strong>, Joonsung Kwon, Geonwoo Lee, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>ICML Workshop on AI for Science</em>, 2026
                 <br>
@@ -188,7 +244,7 @@
               <td class="paper-text">
                 <a href="https://icml.cc/virtual/2026/73576"><span class="papertitle">AISFlow: Boundary-Informed Flow Matching for Long-Term AIS Trajectory Imputation</span></a>
                 <br>
-                S. Bae*, <strong>Youngseok Hwang</strong>*, G. Lee, J. Seo, D. Lee, H. Park&dagger;
+                Sungho Bae*, <strong>Youngseok Hwang</strong>*, Geonwoo Lee, Jaeeun Seo, Dohun Lee, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>ICML Workshop on AI for Science</em>, 2026
                 <br>
@@ -206,7 +262,7 @@
               <td class="paper-text">
                 <a href="https://arxiv.org/abs/2512.20086"><span class="papertitle">Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection</span></a>
                 <br>
-                J. Kim*, <strong>Youngseok Hwang</strong>*, M. Kim, S. Bae, H. Park&dagger;
+                Jeehong Kim*, <strong>Youngseok Hwang</strong>*, Minchan Kim, Sungho Bae, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>NeurIPS Workshop on AI for Science</em>, 2025 &nbsp;<a class="tag-award" href="https://ai4sciencecommunity.github.io/neurips25/award.html">(Best Poster Award)</a>
                 <br>
@@ -223,7 +279,7 @@
               <td class="paper-text">
                 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11165046"><span class="papertitle">STGVAD: Spatio-Temporal Graph-based Vessel Behavior Anomaly Detection</span></a>
                 <br>
-                J. Kim*, M. Kim*, <strong>Youngseok Hwang</strong>, S. Bae, D. J. Cho, W. Lee&dagger;, H. Park&dagger;
+                Jeehong Kim*, Minchan Kim*, <strong>Youngseok Hwang</strong>, Sungho Bae, Deuk Jae Cho, <a href="https://scholar.google.com/citations?user=wNTzAlMAAAAJ">Wonhee Lee</a>&dagger;, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>IEEE Access</em>, 2025
                 <br>
@@ -241,7 +297,7 @@
               <td class="paper-text">
                 <a href="https://arxiv.org/pdf/2502.14197"><span class="papertitle">Adaptive Sparsified Graph Learning Framework for Vessel Behavior Anomalies</span></a>
                 <br>
-                J. Kim*, M. Kim*, J. Ju, <strong>Youngseok Hwang</strong>, W. Lee, H. Park&dagger;
+                Jeehong Kim*, Minchan Kim*, Jaeseong Ju, <strong>Youngseok Hwang</strong>, <a href="https://scholar.google.com/citations?user=wNTzAlMAAAAJ">Wonhee Lee</a>, <a href="https://hyunwoopark.com/">Hyunwoo Park</a>&dagger;
                 <br>
                 <em>AAAI Workshop on Anomaly Detection in Scientific Domains</em>, 2025
                 <br>
@@ -253,65 +309,11 @@
           </tbody></table>
 
           <!-- =========================================================
-               4. Research Experience
-               ---------------------------------------------------------
-               로고: assets/logos/<이름>.png 를 넣으면 회색 이니셜 칸 대신 표시됨.
-               칸은 16:9 (144x81). 흰 배경 16:9 캔버스(예: 480x270)에 여백을 두고 넣으면 칸에 꽉 참.
-                 snu-dial  Seoul National University + DIAL Lab
-                 kisti     KISTI
-                 etri      ETRI
-
-               새 기관 추가 시 <tr class="exp"> ... </tr> 블록 하나를 복사해서
-               logo 칸의 이니셜과 data-src 이름만 바꾸면 됨.
-               ========================================================= -->
-          <table class="block"><tbody>
-            <tr>
-              <td class="section-head">
-                <h2>Research Experience</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table class="block exp-list"><tbody>
-
-            <tr class="exp">
-              <td class="exp-logo">
-                <div class="logo"><span>SNU</span><img data-src="assets/logos/snu-dial" alt="Seoul National University and DIAL Lab logos"></div>
-              </td>
-              <td class="exp-text">
-                <a href="https://en.snu.ac.kr/"><strong>Seoul National University</strong></a>, <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>
-                <div class="dated"><span>Research Intern, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span> <span class="date">Aug 2024 &ndash; Feb 2025</span></div>
-                <div class="exp-advisor">Advisor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
-              </td>
-            </tr>
-
-            <tr class="exp">
-              <td class="exp-logo">
-                <div class="logo"><span>KISTI</span><img data-src="assets/logos/kisti" alt="KISTI logo"></div>
-              </td>
-              <td class="exp-text">
-                <a href="https://www.kisti.re.kr/eng/"><strong>Korea Institute of Science and Technology Information (KISTI)</strong></a>
-                <div class="dated"><span>Research Assistant, Technology Commercialization Research Center</span> <span class="date">Feb 2024 &ndash; May 2024</span></div>
-                <div class="exp-advisor">Advisor: Dr. Yunjeong Choi</div>
-              </td>
-            </tr>
-
-            <tr class="exp">
-              <td class="exp-logo">
-                <div class="logo"><span>ETRI</span><img data-src="assets/logos/etri" alt="ETRI logo"></div>
-              </td>
-              <td class="exp-text">
-                <a href="https://www.etri.re.kr/eng/main/main.etri"><strong>Electronics and Telecommunications Research Institute (ETRI)</strong></a>
-                <div class="dated"><span>Research Intern, Fiscal and Economic Policy Intelligence Research Center</span> <span class="date">Jul 2023 &ndash; Aug 2023</span></div>
-                <div class="exp-advisor">Advisor: Dr. Yeonhee Lee</div>
-              </td>
-            </tr>
-
-          </tbody></table>
-
-          <!-- =========================================================
                5. Awards / Teaching / Service
                ---------------------------------------------------------
                한 줄 = <div class="dated"><span>내용</span> <span class="date">연도</span></div>
+               아래에 회색 보조 줄(교수 등)이 붙는 항목은 <div class="entry"> 로 감싸고
+               <div class="sub">Instructor: Prof. ...</div> 를 추가
                ========================================================= -->
           <table class="block"><tbody>
             <tr>
@@ -339,9 +341,26 @@
             </tr>
             <tr>
               <td class="list-text">
-                <div class="dated"><span>Teaching Assistant, <em>Special Topics in Data Science (Vibe Coding)</em>, GSDS, SNU</span> <span class="date">Fall 2026</span></div>
-                <div class="dated"><span>Teaching Assistant, <em>Mathematics and Data Science for Understanding Social Systems</em>, SNU College</span> <span class="date">Spring 2026</span></div>
-                <div class="dated"><span>Teaching Assistant, SNU executive &amp; career programs (Big Data &amp; AI CEO; Big Data, AI &amp; Fintech; AI Career Path)</span> <span class="date">2025&ndash;2026</span></div>
+                <div class="entry">
+                  <div class="dated"><span>Teaching Assistant, <em>Special Topics in Data Science (Vibe Coding)</em>, GSDS, SNU</span> <span class="date">Fall 2026</span></div>
+                  <div class="sub">Instructor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
+                </div>
+                <div class="entry">
+                  <div class="dated"><span>Teaching Assistant, <em>Mathematics and Data Science for Understanding Social Systems</em>, SNU College</span> <span class="date">Spring 2026</span></div>
+                  <div class="sub">Instructor: Prof. <a href="https://hyoun.me/">Hyejin Youn</a></div>
+                </div>
+                <div class="entry">
+                  <div class="dated"><span>Teaching Assistant, <a href="http://www.sanhak-ai.com/">AI Career Path Program</a>, SNU GSDS &amp; Korea Sanhak Foundation</span> <span class="date">2025&ndash;2026</span></div>
+                  <div class="sub">Instructors: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a> and Prof. Taesup Kim</div>
+                </div>
+                <div class="entry">
+                  <div class="dated"><span>Teaching Assistant, Big Data &amp; AI CEO Program (1st, 2nd, 4th cohorts), SNU &amp; KDT</span> <span class="date">2025&ndash;2026</span></div>
+                  <div class="sub">Instructor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
+                </div>
+                <div class="entry">
+                  <div class="dated"><span>Teaching Assistant, Advanced Training Program in Big Data, AI &amp; Fintech (11th cohort), SNU &amp; KDT</span> <span class="date">2025</span></div>
+                  <div class="sub">Instructor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
+                </div>
               </td>
             </tr>
           </tbody></table>
@@ -354,9 +373,7 @@
             </tr>
             <tr>
               <td class="list-text">
-                <div class="dated"><span>Reviewer, ICLR</span> <span class="date">2027</span></div>
-                <!-- TODO: 재임 기간을 date 칸에 추가 -->
-                <div class="dated"><span>President, Graduate Student Council, Graduate School of Data Science, SNU</span> <span class="date"></span></div>
+                <div class="dated"><span>President, Graduate Student Council, Graduate School of Data Science, SNU</span> <span class="date">2026</span></div>
                 <div class="dated"><span>Mentor, <a href="https://sites.google.com/view/snu-ds-career-workshop/home">Google-sponsored ExploreCSR SNU Data Science Career Workshop</a></span> <span class="date">2025</span></div>
               </td>
             </tr>
@@ -379,6 +396,6 @@
         </td>
       </tr>
     </tbody></table>
-    <script src="assets/js/main.js?v=2026100401"></script>
+    <script src="assets/js/main.js?v=2026100402"></script>
   </body>
 </html>
