@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2026100403">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2026100404">
     <script>
       // Apply the theme before first paint: saved choice, else the OS preference
       (function () {
@@ -64,7 +64,7 @@
                 </p>
                 <p>
                   I'm an integrated Ph.D. student at the <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>, <a href="https://en.snu.ac.kr/">Seoul National University</a>,
-                  where I'm a member of the <a href="https://dial.snu.ac.kr/">DIAL Lab</a> advised by <a href="https://hyunwoopark.com/">Hyunwoo Park</a>.
+                  where I'm a member of the <a href="https://dial.snu.ac.kr/">Data Intelligence and Learning (DIAL) Lab</a> advised by <a href="https://hyunwoopark.com/">Hyunwoo Park</a>.
                 </p>
                 <p>
                   I'm fortunate to collaborate with <a href="https://scholar.google.com/citations?user=wNTzAlMAAAAJ">Wonhee Lee</a> at <a href="https://kriso.re.kr/eng/">KRISO</a> on maritime AI (AI for Science),
@@ -312,7 +312,7 @@
                5. Awards & Honors / Teaching / Service
                ---------------------------------------------------------
                한 줄 = <div class="dated"><span>내용</span> <span class="date">연도</span></div>
-               Awards & Honors: 첫 화면에 둘 것만 위에, 나머지는 <details class="more"> 안에 (접힘)
+               Awards & Honors: 연도순으로 전부 적고, "Show all"을 눌러야 보일 줄에는 class="dated extra"
                아래에 회색 보조 줄(교수 등)이 붙는 항목은 <div class="entry"> 로 감싸고
                <div class="sub">Instructor: Prof. ...</div> 를 추가
                ========================================================= -->
@@ -323,30 +323,28 @@
               </td>
             </tr>
             <tr>
-              <td class="list-text">
+              <td class="list-text" data-collapsible>
                 <div class="dated"><span>Best Paper Award, KDMS Summer Conference</span> <span class="date">2026</span></div>
                 <div class="dated"><span>Research Achievement Scholarship, Medical AI Talent Program (SNU AI MED), SNU</span> <span class="date">2026</span></div>
                 <div class="dated"><span><a href="https://ai4sciencecommunity.github.io/neurips25/award.html">Best Poster Award</a>, NeurIPS Workshop on AI for Science</span> <span class="date">2025</span></div>
-                <div class="dated"><span>Medical AI Talent Program (SNU AI MED), SNU</span> <span class="date">2025&ndash;present</span></div>
+                <div class="dated extra"><span>Medical AI Talent Program (SNU AI MED), SNU</span> <span class="date">2025&ndash;present</span></div>
                 <div class="dated"><span>Best Paper Award, KDMS Summer Conference</span> <span class="date">2025</span></div>
+                <div class="dated"><span>Commendation Prize, NH Investment &amp; Securities Big Data Competition</span> <span class="date">2024</span></div>
                 <div class="dated"><span>Outstanding Project Award, Google for Developers ML Bootcamp</span> <span class="date">2024</span></div>
                 <div class="dated"><span>LG Aimers, top 0.7% (4th cohort) and top 2.8% (5th cohort)</span> <span class="date">2024</span></div>
-                <div class="dated"><span>Research Grant, LG AI Research (LG AI Talent Pool)</span> <span class="date">2024</span></div>
-                <div class="dated"><span>Excellence Prize, Student Thesis Competition (NABO)</span> <span class="date">2023</span></div>
-                <details class="more">
-                  <summary><span class="when-closed">Show 11 more</span><span class="when-open">Show less</span></summary>
-                  <div class="dated"><span>Commendation Prize, NH Investment &amp; Securities Big Data Competition</span> <span class="date">2024</span></div>
-                  <div class="dated"><span>Encouragement Prize, Automobile Environmental Big Data Competition (K-ECO)</span> <span class="date">2024</span></div>
-                  <div class="dated"><span>Top Prize, Start-up Idea Pitching Competition (CTIA)</span> <span class="date">2023</span></div>
-                  <div class="dated"><span>Top Prize, CCF ChatGPT Competition (CICI)</span> <span class="date">2023</span></div>
-                  <div class="dated"><span>Excellence Prize, GetGPT Idea Competition (Wordbricks)</span> <span class="date">2023</span></div>
-                  <div class="dated"><span>Encouragement Prize, ChatGPT AI Service Hackathon (Maum.AI)</span> <span class="date">2023</span></div>
-                  <div class="dated"><span>Excellence Prize, MODUIDEALAB Idea Contest (Modulabs)</span> <span class="date">2023</span></div>
-                  <div class="dated"><span>Top Prize, AI Service Idea Hackathon (Maum.AI)</span> <span class="date">2022</span></div>
-                  <div class="dated"><span>Excellence Prize, Cloud Idea Competition (BIPA)</span> <span class="date">2022</span></div>
-                  <div class="dated"><span>Excellence Prize, AI Content Convergence Idea Competition (GICON)</span> <span class="date">2022</span></div>
-                  <div class="dated"><span>Dean's Award (Outstanding Project), Korea University Intelligent Information SW Academy</span> <span class="date">2022</span></div>
-                </details>
+                <div class="dated extra"><span>Research Grant, LG AI Research (LG AI Talent Pool)</span> <span class="date">2024</span></div>
+                <div class="dated extra"><span>Encouragement Prize, Automobile Environmental Big Data Competition (K-ECO)</span> <span class="date">2024</span></div>
+                <div class="dated extra"><span>Excellence Prize, Student Thesis Competition (NABO)</span> <span class="date">2023</span></div>
+                <div class="dated extra"><span>Top Prize, Start-up Idea Pitching Competition (CTIA)</span> <span class="date">2023</span></div>
+                <div class="dated extra"><span>Top Prize, CCF ChatGPT Competition (CICI)</span> <span class="date">2023</span></div>
+                <div class="dated extra"><span>Excellence Prize, GetGPT Idea Competition (Wordbricks)</span> <span class="date">2023</span></div>
+                <div class="dated"><span>Encouragement Prize, ChatGPT AI Service Hackathon (Maum.AI)</span> <span class="date">2023</span></div>
+                <div class="dated extra"><span>Excellence Prize, MODUIDEALAB Idea Contest (Modulabs)</span> <span class="date">2023</span></div>
+                <div class="dated extra"><span>Top Prize, AI Service Idea Hackathon (Maum.AI)</span> <span class="date">2022</span></div>
+                <div class="dated extra"><span>Excellence Prize, Cloud Idea Competition (BIPA)</span> <span class="date">2022</span></div>
+                <div class="dated extra"><span>Excellence Prize, AI Content Convergence Idea Competition (GICON)</span> <span class="date">2022</span></div>
+                <div class="dated"><span>Dean's Award (Outstanding Project), Korea University Intelligent Information SW Academy</span> <span class="date">2022</span></div>
+                <button type="button" class="show-all" aria-expanded="false" hidden>Show all</button>
               </td>
             </tr>
           </tbody></table>
@@ -414,6 +412,6 @@
         </td>
       </tr>
     </tbody></table>
-    <script src="assets/js/main.js?v=2026100403"></script>
+    <script src="assets/js/main.js?v=2026100404"></script>
   </body>
 </html>

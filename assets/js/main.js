@@ -66,3 +66,17 @@
     if (!savedTheme()) apply(e.matches ? 'dark' : 'light');
   });
 })();
+
+// "Show all" lists: rows marked .extra stay hidden until the visitor expands the list.
+(function () {
+  document.querySelectorAll('[data-collapsible]').forEach(function (list) {
+    var button = list.querySelector('.show-all');
+    list.classList.add('collapsed');
+    button.hidden = false;
+    button.addEventListener('click', function () {
+      var collapsed = list.classList.toggle('collapsed');
+      button.textContent = collapsed ? 'Show all' : 'Show less';
+      button.setAttribute('aria-expanded', String(!collapsed));
+    });
+  });
+})();
