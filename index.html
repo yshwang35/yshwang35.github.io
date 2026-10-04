@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2026100401">
     <script>
       // Apply the theme before first paint: saved choice, else the OS preference
       (function () {
@@ -29,7 +29,9 @@
        파일 구조
          index.html            이 페이지
          assets/css/style.css  스타일
-         assets/js/main.js     이미지 자동 로더 (아래 설명)
+         assets/js/main.js     이미지 자동 로더 (아래 설명), 다크 모드 토글
+         ※ style.css / main.js 를 고치면 아래 <link>, <script> 의 ?v= 숫자를 올릴 것
+           (GitHub Pages가 10분간 캐시해서 예전 CSS가 새 HTML에 붙는 것을 막음)
          assets/img/           프로필 사진, favicon (🌐)
          assets/logos/         Experience 로고   (예: snu.png)
          assets/papers/        논문 핵심 figure  (예: kdd26-maritime.png)
@@ -277,7 +279,7 @@
               </td>
               <td class="exp-text">
                 <a href="https://en.snu.ac.kr/"><strong>Seoul National University</strong></a>, <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>
-                <div class="dated"><span>Research Intern, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span><span class="date">Aug 2024 &ndash; Feb 2025</span></div>
+                <div class="dated"><span>Research Intern, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span> <span class="date">Aug 2024 &ndash; Feb 2025</span></div>
                 <div class="exp-advisor">Advisor: Prof. <a href="https://hyunwoopark.com/">Hyunwoo Park</a></div>
               </td>
             </tr>
@@ -288,7 +290,7 @@
               </td>
               <td class="exp-text">
                 <a href="https://www.kisti.re.kr/eng/"><strong>Korea Institute of Science and Technology Information (KISTI)</strong></a>
-                <div class="dated"><span>Research Assistant, Technology Commercialization Research Center</span><span class="date">Feb 2024 &ndash; May 2024</span></div>
+                <div class="dated"><span>Research Assistant, Technology Commercialization Research Center</span> <span class="date">Feb 2024 &ndash; May 2024</span></div>
                 <div class="exp-advisor">Advisor: Dr. Yunjeong Choi</div>
               </td>
             </tr>
@@ -299,7 +301,7 @@
               </td>
               <td class="exp-text">
                 <a href="https://www.etri.re.kr/eng/main/main.etri"><strong>Electronics and Telecommunications Research Institute (ETRI)</strong></a>
-                <div class="dated"><span>Research Intern, Fiscal and Economic Policy Intelligence Research Center</span><span class="date">Jul 2023 &ndash; Aug 2023</span></div>
+                <div class="dated"><span>Research Intern, Fiscal and Economic Policy Intelligence Research Center</span> <span class="date">Jul 2023 &ndash; Aug 2023</span></div>
                 <div class="exp-advisor">Advisor: Dr. Yeonhee Lee</div>
               </td>
             </tr>
@@ -309,7 +311,7 @@
           <!-- =========================================================
                5. Awards / Teaching / Service
                ---------------------------------------------------------
-               한 줄 = <div class="dated"><span>내용</span><span class="date">연도</span></div>
+               한 줄 = <div class="dated"><span>내용</span> <span class="date">연도</span></div>
                ========================================================= -->
           <table class="block"><tbody>
             <tr>
@@ -319,11 +321,12 @@
             </tr>
             <tr>
               <td class="list-text">
-                <div class="dated"><span>Best Paper Award, KDMS Summer Conference</span><span class="date">2025, 2026</span></div>
-                <div class="dated"><span><a href="https://ai4sciencecommunity.github.io/neurips25/award.html">Best Poster Award</a>, NeurIPS Workshop on AI for Science</span><span class="date">2025</span></div>
-                <div class="dated"><span>LG Aimers, top 0.7% (4th cohort) and top 2.8% (5th cohort)</span><span class="date">2024</span></div>
-                <div class="dated"><span>Outstanding Project Award, Google for Developers ML Bootcamp</span><span class="date">2024</span></div>
-                <div class="dated"><span>Dean's Award (Outstanding Project), Korea University Intelligent Information SW Academy</span><span class="date">2022</span></div>
+                <div class="dated"><span>Best Paper Award, KDMS Summer Conference</span> <span class="date">2026</span></div>
+                <div class="dated"><span><a href="https://ai4sciencecommunity.github.io/neurips25/award.html">Best Poster Award</a>, NeurIPS Workshop on AI for Science</span> <span class="date">2025</span></div>
+                <div class="dated"><span>Best Paper Award, KDMS Summer Conference</span> <span class="date">2025</span></div>
+                <div class="dated"><span>LG Aimers, top 0.7% (4th cohort) and top 2.8% (5th cohort)</span> <span class="date">2024</span></div>
+                <div class="dated"><span>Outstanding Project Award, Google for Developers ML Bootcamp</span> <span class="date">2024</span></div>
+                <div class="dated"><span>Dean's Award (Outstanding Project), Korea University Intelligent Information SW Academy</span> <span class="date">2022</span></div>
               </td>
             </tr>
           </tbody></table>
@@ -336,9 +339,9 @@
             </tr>
             <tr>
               <td class="list-text">
-                <div class="dated"><span>Teaching Assistant, <em>Special Topics in Data Science (Vibe Coding)</em>, GSDS, SNU</span><span class="date">Fall 2026</span></div>
-                <div class="dated"><span>Teaching Assistant, <em>Mathematics and Data Science for Understanding Social Systems</em>, SNU College</span><span class="date">Spring 2026</span></div>
-                <div class="dated"><span>Teaching Assistant, SNU executive &amp; career programs (Big Data &amp; AI CEO; Big Data, AI &amp; Fintech; AI Career Path)</span><span class="date">2025&ndash;2026</span></div>
+                <div class="dated"><span>Teaching Assistant, <em>Special Topics in Data Science (Vibe Coding)</em>, GSDS, SNU</span> <span class="date">Fall 2026</span></div>
+                <div class="dated"><span>Teaching Assistant, <em>Mathematics and Data Science for Understanding Social Systems</em>, SNU College</span> <span class="date">Spring 2026</span></div>
+                <div class="dated"><span>Teaching Assistant, SNU executive &amp; career programs (Big Data &amp; AI CEO; Big Data, AI &amp; Fintech; AI Career Path)</span> <span class="date">2025&ndash;2026</span></div>
               </td>
             </tr>
           </tbody></table>
@@ -351,10 +354,10 @@
             </tr>
             <tr>
               <td class="list-text">
-                <div class="dated"><span>Reviewer, ICLR</span><span class="date">2027</span></div>
+                <div class="dated"><span>Reviewer, ICLR</span> <span class="date">2027</span></div>
                 <!-- TODO: 재임 기간을 date 칸에 추가 -->
-                <div class="dated"><span>President, Graduate Student Council, Graduate School of Data Science, SNU</span><span class="date"></span></div>
-                <div class="dated"><span>Mentor, <a href="https://sites.google.com/view/snu-ds-career-workshop/home">Google-sponsored ExploreCSR SNU Data Science Career Workshop</a></span><span class="date">2025</span></div>
+                <div class="dated"><span>President, Graduate Student Council, Graduate School of Data Science, SNU</span> <span class="date"></span></div>
+                <div class="dated"><span>Mentor, <a href="https://sites.google.com/view/snu-ds-career-workshop/home">Google-sponsored ExploreCSR SNU Data Science Career Workshop</a></span> <span class="date">2025</span></div>
               </td>
             </tr>
           </tbody></table>
@@ -376,6 +379,6 @@
         </td>
       </tr>
     </tbody></table>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026100401"></script>
   </body>
 </html>
