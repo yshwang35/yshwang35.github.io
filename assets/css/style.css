@@ -448,6 +448,31 @@ tr.paper:focus-within .two {
   gap: 12px;
 }
 
+/* Collapsed tail of a long list ("Show N more") */
+.more summary {
+  color: var(--link);
+  cursor: pointer;
+  list-style: none;
+  margin-top: 4px;
+}
+
+.more summary::-webkit-details-marker {
+  display: none;
+}
+
+.more summary:hover {
+  color: var(--link-hover);
+}
+
+.more .when-open,
+.more[open] .when-closed {
+  display: none;
+}
+
+.more[open] .when-open {
+  display: inline;
+}
+
 /* Gray sub-line under an entry (advisor, instructor) */
 .sub {
   color: var(--muted);
