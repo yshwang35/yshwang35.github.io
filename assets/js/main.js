@@ -80,3 +80,50 @@
     });
   });
 })();
+
+// Section menu: bold the section whose heading has scrolled to the top of the window.
+(function () {
+  var links = [].slice.call(document.querySelectorAll('.site-nav a'));
+  var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  var ticking = false;
+  var clicked = -1;  // a clicked link stays marked until the visitor scrolls by hand
+
+  function mark(index) {
+    links.forEach(function (a, i) { a.classList.toggle('active', i === index); });
+  }
+
+  function update() {
+    ticking = false;
+    var current = -1;
+    targets.forEach(function (t, i) {
+      if (t && t.getBoundingClientRect().top <= 120) current = i;
+    });
+    // Short sections at the end never reach the top, so at the bottom of the page
+    // keep the clicked one, or else mark the last one
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = clicked >= 0 ? clicked : targets.length - 1;
+    } else if (clicked >= 0) {
+      current = clicked;
+    }
+    mark(current);
+  }
+
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function () {
+      clicked = i;
+      mark(i);
+    });
+  });
+
+  ['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+    window.addEventListener(type, function () { clicked = -1; }, { passive: true });
+  });
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  update();
+})();

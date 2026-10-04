@@ -120,11 +120,66 @@
     }
 }
 
-/* Light/dark toggle (top-right corner). Shows the moon in light mode, the sun in dark mode */
-.theme-toggle {
+/* Top-right corner: theme toggle + section menu. The menu only shows (and the corner
+   only follows the scroll) when there is room beside the 800px column. */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+h2[id] {
+  scroll-margin-top: 16px;
+}
+
+.corner {
   position: absolute;
   top: 12px;
   right: 12px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.site-nav {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.site-nav a {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.site-nav a:hover {
+  color: var(--link-hover);
+}
+
+.site-nav a.active {
+  color: var(--text);
+  font-weight: 700;
+}
+
+@media (min-width: 1180px) {
+  .corner {
+    position: fixed;
+  }
+
+  .site-nav {
+    display: flex;
+  }
+}
+
+/* Light/dark toggle. Shows the moon in light mode, the sun in dark mode */
+.theme-toggle {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -469,6 +524,18 @@ tr.paper:focus-within .two {
 
 .show-all[hidden] {
   display: none;
+}
+
+/* News: date on the left, text on the right */
+.news-row {
+  display: flex;
+  gap: 12px;
+}
+
+.news-date {
+  flex: 0 0 64px;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 /* Gray sub-line under an entry (advisor, instructor) */
