@@ -470,7 +470,7 @@ tr.paper:focus-within .two {
   position: relative;
   width: 144px;
   height: 81px;
-  border-radius: 10px;
+  border-radius: 0;
   background: var(--placeholder-bg);
   color: var(--placeholder-text);
   display: flex;
