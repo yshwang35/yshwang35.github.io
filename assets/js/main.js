@@ -127,3 +127,12 @@
   }, { passive: true });
   update();
 })();
+
+// Footer "Last updated": GitHub Pages sends Last-Modified, so this follows the latest deploy.
+(function () {
+  var el = document.getElementById('last-updated');
+  var date = new Date(document.lastModified);
+  if (el && !isNaN(date)) {
+    el.textContent = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+})();
