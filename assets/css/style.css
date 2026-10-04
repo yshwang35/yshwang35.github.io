@@ -83,7 +83,6 @@
   --card-edge: #e4e4e4;
   --oral: red;
   --award: #ff8080;
-  --box-filter: none;
 }
 
 /* Dark tokens appear twice (explicit choice + no-JS fallback); keep them in sync */
@@ -101,7 +100,6 @@
   --card-edge: transparent;
   --oral: #ff6b6b;
   --award: #ff9a9a;
-  --box-filter: brightness(0.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,8 +117,7 @@
     --card-edge: transparent;
     --oral: #ff6b6b;
     --award: #ff9a9a;
-    --box-filter: brightness(0.85);
-  }
+    }
 }
 
 /* Light/dark toggle (top-right corner). Shows the moon in light mode, the sun in dark mode */
@@ -229,14 +226,6 @@ span.highlight {
   background-color: var(--highlight);
 }
 
-.colored-box {
-  color: black;
-  filter: var(--box-filter);
-  padding: 20px;
-  display: inline-block;
-  border-radius: 10px;
-}
-
 /* ------------------------------------------------------------------
    Layout tables
    ------------------------------------------------------------------ */
@@ -302,17 +291,10 @@ tr.highlight-row {
   background-color: var(--highlight);
 }
 
-.misc-label {
-  padding: 16px;
-  width: 20%;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.misc-text {
-  padding: 8px;
-  width: 80%;
-  vertical-align: middle;
+/* Awards / Teaching / Service: plain text rows under a section heading */
+.list-text {
+  padding: 0 8px 8px 16px;
+  line-height: 1.6;
 }
 
 /* Venue tags: same colors Jon uses for oral / highlight tags */
@@ -460,7 +442,7 @@ tr.paper:focus-within .two {
   line-height: 1.6;
 }
 
-.exp-role {
+.dated {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -470,7 +452,7 @@ tr.paper:focus-within .two {
   color: var(--muted);
 }
 
-.exp-date {
+.dated .date {
   color: var(--muted);
   white-space: nowrap;
 }
@@ -482,9 +464,7 @@ tr.paper:focus-within .two {
   .intro-text,
   .intro-photo,
   .paper-thumb,
-  .paper-text,
-  .misc-label,
-  .misc-text {
+  .paper-text {
     display: block;
     width: auto;
     max-width: none;
@@ -506,10 +486,6 @@ tr.paper:focus-within .two {
     aspect-ratio: 16 / 9;
   }
 
-  .misc-label {
-    text-align: left;
-  }
-
   .exp-logo {
     width: 96px;
     padding: 8px;
@@ -520,12 +496,9 @@ tr.paper:focus-within .two {
     height: 54px;
   }
 
-  .exp-role {
+  .dated {
     flex-direction: column;
     gap: 0;
   }
 
-  .colored-box {
-    padding: 12px 16px;
-  }
 }
