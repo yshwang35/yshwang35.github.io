@@ -290,7 +290,7 @@ span.highlight {
   border: 0;
   border-spacing: 0;
   border-collapse: separate;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 .block {
