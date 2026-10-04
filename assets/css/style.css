@@ -64,21 +64,63 @@
 }
 
 /* ------------------------------------------------------------------
+   Color tokens: light by default, dark when the OS/browser prefers it.
+   Figures and logos keep a white card in both modes (they are drawn on white).
+   ------------------------------------------------------------------ */
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --text: #000;
+  --link: #1772d0;
+  --link-hover: #f09228;
+  --muted: #666;
+  --highlight: #ffffd0;
+  --placeholder-bg: #f0f0f0;
+  --placeholder-text: #888;
+  --card: #fff;
+  --card-edge: #e4e4e4;
+  --oral: red;
+  --award: #ff8080;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161719;
+    --text: #e3e3e3;
+    --link: #6cb2ff;
+    --link-hover: #f5a442;
+    --muted: #9b9b9b;
+    --highlight: #2e2a17;
+    --placeholder-bg: #26272a;
+    --placeholder-text: #8c8c8c;
+    --card: #fff;
+    --card-edge: transparent;
+    --oral: #ff6b6b;
+    --award: #ff9a9a;
+  }
+
+  /* Pastel label boxes glare on a dark page; tone them down a little */
+  .colored-box {
+    filter: brightness(0.85);
+  }
+}
+
+/* ------------------------------------------------------------------
    Base styles (Jon Barron template)
    ------------------------------------------------------------------ */
 a {
-  color: #1772d0;
+  color: var(--link);
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: var(--link-hover);
   text-decoration: none;
 }
 
 a:focus-visible {
-  outline: 2px solid #f09228;
+  outline: 2px solid var(--link-hover);
   outline-offset: 2px;
 }
 
@@ -96,8 +138,8 @@ strong {
 
 body {
   margin: 0;
-  background: #fff;
-  color: #000;
+  background: var(--bg);
+  color: var(--text);
 }
 
 h2 {
@@ -121,7 +163,7 @@ h2 {
 }
 
 span.highlight {
-  background-color: #ffffd0;
+  background-color: var(--highlight);
 }
 
 .colored-box {
@@ -156,14 +198,14 @@ span.highlight {
 
 .intro-text {
   padding: 2.5%;
-  width: 63%;
+  width: 72%;
   vertical-align: middle;
 }
 
 .intro-photo {
   padding: 2.5%;
-  width: 37%;
-  max-width: 37%;
+  width: 28%;
+  max-width: 28%;
 }
 
 .intro-photo img {
@@ -193,7 +235,7 @@ span.highlight {
 }
 
 tr.highlight-row {
-  background-color: #ffffd0;
+  background-color: var(--highlight);
 }
 
 .misc-label {
@@ -211,12 +253,12 @@ tr.highlight-row {
 
 /* Venue tags: same colors Jon uses for oral / highlight tags */
 .tag-oral {
-  color: red;
+  color: var(--oral);
   font-weight: 700;
 }
 
 .tag-award {
-  color: #ff8080;
+  color: var(--award);
   font-weight: 700;
 }
 
@@ -231,8 +273,8 @@ tr.highlight-row {
   width: 240px;
   height: 150px;
   border-radius: 6px;
-  background: #f0f0f0;
-  color: #888;
+  background: var(--placeholder-bg);
+  color: var(--placeholder-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,8 +284,8 @@ tr.highlight-row {
 }
 
 .thumb.loaded {
-  background: #fff;
-  box-shadow: 0 0 0 1px #e4e4e4;
+  background: var(--card);
+  box-shadow: 0 0 0 1px var(--card-edge);
 }
 
 .thumb img,
@@ -253,7 +295,7 @@ tr.highlight-row {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #fff;
+  background: var(--card);
   border-radius: 6px;
 }
 
@@ -325,8 +367,8 @@ tr.paper:focus-within .two {
   width: 112px;
   height: 56px;
   border-radius: 10px;
-  background: #f0f0f0;
-  color: #888;
+  background: var(--placeholder-bg);
+  color: var(--placeholder-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,7 +378,7 @@ tr.paper:focus-within .two {
 }
 
 .logo.loaded {
-  background: #fff;
+  background: var(--card);
 }
 
 .logo img {
@@ -345,7 +387,9 @@ tr.paper:focus-within .two {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #fff;
+  padding: 4px;
+  box-sizing: border-box;
+  background: var(--card);
 }
 
 .exp-text {
@@ -361,7 +405,7 @@ tr.paper:focus-within .two {
 }
 
 .exp-date {
-  color: #666;
+  color: var(--muted);
   white-space: nowrap;
 }
 
@@ -381,7 +425,7 @@ tr.paper:focus-within .two {
   }
 
   .intro-photo {
-    max-width: 200px;
+    max-width: 160px;
     margin: 0 auto;
   }
 
