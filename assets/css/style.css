@@ -171,7 +171,7 @@ h2[id] {
   font-weight: 700;
 }
 
-@media (min-width: 1180px) {
+@media (min-width: 1300px) {
   .corner {
     position: fixed;
   }
@@ -625,4 +625,54 @@ tr.paper:focus-within .two {
     gap: 0;
   }
 
+}
+
+/* ------------------------------------------------------------------
+   Wide screens (PC): a slightly wider column and larger type.
+   Phones and narrow windows keep the base sizes above.
+   ------------------------------------------------------------------ */
+@media (min-width: 1200px) {
+  .page {
+    max-width: 960px;
+  }
+
+  body,
+  td,
+  th,
+  tr,
+  p,
+  a,
+  strong,
+  .papertitle {
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .thumb {
+    width: 256px;
+    height: 144px;
+  }
+
+  .exp-logo {
+    width: 160px;
+  }
+
+  .logo {
+    width: 160px;
+    height: 90px;
+  }
+
+  /* small print stays small */
+  .site-nav a,
+  .footer,
+  .footer a {
+    font-size: 13px;
+  }
 }
