@@ -327,6 +327,15 @@ span.highlight {
   border-radius: 0;
 }
 
+.photo-caption {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--muted);
+}
+
 .section-head {
   padding: 16px;
   width: 100%;
