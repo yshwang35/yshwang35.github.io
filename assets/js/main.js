@@ -34,3 +34,35 @@
     next();
   });
 })();
+
+// Theme toggle: flips light/dark and remembers the choice.
+// Until the visitor picks one, the page keeps following the OS setting.
+(function () {
+  var root = document.documentElement;
+  var button = document.getElementById('theme-toggle');
+  var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function savedTheme() {
+    try { return localStorage.getItem('theme'); } catch (e) { return null; }
+  }
+
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    var label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    button.setAttribute('aria-label', label);
+    button.title = label;
+  }
+
+  apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  button.hidden = false;
+
+  button.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  media.addEventListener('change', function (e) {
+    if (!savedTheme()) apply(e.matches ? 'dark' : 'light');
+  });
+})();

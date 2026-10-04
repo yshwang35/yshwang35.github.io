@@ -64,11 +64,13 @@
 }
 
 /* ------------------------------------------------------------------
-   Color tokens: light by default, dark when the OS/browser prefers it.
+   Color tokens. The theme comes from <html data-theme="light|dark">, set by the
+   inline script in <head> (saved choice, else the OS preference) and flipped by
+   the toggle button. The media query is only a fallback when JS is off.
    Figures and logos keep a white card in both modes (they are drawn on white).
    ------------------------------------------------------------------ */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --bg: #fff;
   --text: #000;
   --link: #1772d0;
@@ -81,10 +83,30 @@
   --card-edge: #e4e4e4;
   --oral: red;
   --award: #ff8080;
+  --box-filter: none;
+}
+
+/* Dark tokens appear twice (explicit choice + no-JS fallback); keep them in sync */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #161719;
+  --text: #e3e3e3;
+  --link: #6cb2ff;
+  --link-hover: #f5a442;
+  --muted: #9b9b9b;
+  --highlight: #2e2a17;
+  --placeholder-bg: #26272a;
+  --placeholder-text: #8c8c8c;
+  --card: #fff;
+  --card-edge: transparent;
+  --oral: #ff6b6b;
+  --award: #ff9a9a;
+  --box-filter: brightness(0.85);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
+    color-scheme: dark;
     --bg: #161719;
     --text: #e3e3e3;
     --link: #6cb2ff;
@@ -97,12 +119,53 @@
     --card-edge: transparent;
     --oral: #ff6b6b;
     --award: #ff9a9a;
+    --box-filter: brightness(0.85);
   }
+}
 
-  /* Pastel label boxes glare on a dark page; tone them down a little */
-  .colored-box {
-    filter: brightness(0.85);
-  }
+/* Light/dark toggle (top-right corner). Shows the moon in light mode, the sun in dark mode */
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--placeholder-bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  color: var(--link-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-sun,
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+  display: block;
 }
 
 /* ------------------------------------------------------------------
@@ -168,6 +231,7 @@ span.highlight {
 
 .colored-box {
   color: black;
+  filter: var(--box-filter);
   padding: 20px;
   display: inline-block;
   border-radius: 10px;
