@@ -526,6 +526,13 @@ tr.paper:focus-within .two {
   display: none;
 }
 
+/* Research focus bullets */
+.focus-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
 /* News: date on the left, text on the right */
 .news-row {
   display: flex;
