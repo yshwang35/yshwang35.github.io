@@ -86,8 +86,9 @@
                강조하고 싶은 논문은 class="paper highlight-row".
 
                핵심 figure: assets/papers/<이름>.png 를 넣으면 회색 칸 대신 표시됨.
-               잘리지 않고 칸(4:3)에 맞춰 축소되며, 클릭하면 원본 크기로 열림.
-               가로로 긴 figure는 칸에 맞게 한 번 잘라서 넣는 게 잘 보임.
+               잘리지 않고 칸(16:10)에 맞춰 축소되며, 클릭하면 원본 크기로 열림.
+               웹용으로 가로 1600px 이하로 줄여서 넣을 것 (원본은 originals/ 에 보관).
+               PDF는 안 되므로 png로 변환해서 넣을 것.
                  kdd26-maritime      KDD '26
                  icml26w-cps         ICML '26 Workshop (Domain-Prior)
                  icml26w-aisflow     ICML '26 Workshop (AISFlow)
@@ -212,10 +213,10 @@
                4. Experience
                ---------------------------------------------------------
                로고: assets/logos/<이름>.png 를 넣으면 회색 이니셜 칸 대신 표시됨.
-               정사각형에 가까운 이미지(여백 있는 것)가 잘 보임.
-                 snu     Seoul National University
-                 kisti   KISTI
-                 etri    ETRI
+               칸은 가로 2:1 (112x56). 가로형 워드마크가 잘 맞고, 원본에 여백은 없어도 됨.
+                 snu-dial  Seoul National University + DIAL Lab
+                 kisti     KISTI
+                 etri      ETRI
 
                새 기관 추가 시 <tr class="exp"> ... </tr> 블록 하나를 복사해서
                logo 칸의 이니셜과 data-src 이름만 바꾸면 됨.
@@ -231,7 +232,7 @@
 
             <tr class="exp">
               <td class="exp-logo">
-                <div class="logo"><span>SNU</span><img data-src="assets/logos/snu" alt="Seoul National University logo"></div>
+                <div class="logo"><span>SNU</span><img data-src="assets/logos/snu-dial" alt="Seoul National University and DIAL Lab logos"></div>
               </td>
               <td class="exp-text">
                 <a href="https://gsds.snu.ac.kr/"><strong>Seoul National University</strong></a>, Graduate School of Data Science
