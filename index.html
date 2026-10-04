@@ -4,12 +4,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Youngseok Hwang</title>
     <meta name="author" content="Youngseok Hwang">
-    <meta name="description" content="Youngseok Hwang — integrated M.S./Ph.D. student in Data Science at Seoul National University. AI for science, graph representation learning, tabular data learning, maritime anomaly detection.">
+    <meta name="description" content="Youngseok Hwang — integrated Ph.D. student in Data Science at Seoul National University. AI for science, AI for engineering, graph representation learning, tabular representation learning.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- TODO: favicon을 쓰려면 images/favicon.ico 를 넣고 아래 주석 해제 -->
-    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> -->
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- TODO: favicon을 쓰려면 assets/img/favicon.ico 를 넣고 아래 주석 해제 -->
+    <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
+
+  <!-- =============================================================
+       파일 구조
+         index.html            이 페이지
+         assets/css/style.css  스타일
+         assets/js/main.js     이미지 자동 로더 (아래 설명)
+         assets/img/           프로필 사진, favicon
+         assets/logos/         Experience 로고   (예: snu.png)
+         assets/papers/        논문 핵심 figure  (예: kdd26-maritime.png)
+         data/                 cv.pdf
+         originals/            원본 보관용, git에 안 올라감
+
+       이미지 넣는 법: 아래 각 <img data-src="assets/.../이름"> 의 "이름"으로
+       파일을 넣기만 하면 됨. 확장자는 png/jpg/jpeg/webp/gif/svg 아무거나.
+       파일이 없으면 회색 자리표시가 그대로 보이므로 HTML은 고칠 필요 없음.
+       ※ 휴대폰 사진은 올리기 전에 위치정보(EXIF/GPS)를 지울 것.
+       ============================================================= -->
 
   <body>
     <table class="page"><tbody>
@@ -26,29 +43,20 @@
                   Youngseok Hwang
                 </p>
                 <p>
-                  I'm an integrated M.S./Ph.D. student at the <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>, Seoul National University,
+                  I'm an integrated Ph.D. student at the <a href="https://gsds.snu.ac.kr/">Graduate School of Data Science</a>, Seoul National University,
                   where I'm a member of the <a href="https://dial.snu.ac.kr/">DIAL Lab</a> advised by <a href="https://hyunwoopark.com/">Hyunwoo Park</a>.
-                  I'm also advised by <a href="https://viplab.snu.ac.kr/">Joonseok Lee</a>.
-                </p>
-                <p>
-                  I work with <a href="https://www.kriso.re.kr/">KRISO</a> on maritime AI.
-                  Before grad school, I studied mechanical engineering.
-                  <!-- TODO: 학부 학교 이름을 넣고 싶다면: "I received my B.S. in Mechanical Engineering from <a href='...'>XXX University</a>." -->
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:yshwang35@snu.ac.kr">Email</a> &nbsp;/&nbsp;
                   <!-- TODO: data/cv.pdf 를 넣고 주석 해제
                   <a href="data/cv.pdf">CV</a> &nbsp;/&nbsp;
                   -->
-                  <a href="https://scholar.google.com/citations?user=VVMlSPgAAAAJ&amp;hl=en">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://openreview.net/profile?id=~Youngseok_Hwang1">OpenReview</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/yshwang35">GitHub</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=VVMlSPgAAAAJ&amp;hl=ko">Google Scholar</a> &nbsp;/&nbsp;
                   <a href="https://www.linkedin.com/in/youngseokhwang">LinkedIn</a>
                 </p>
               </td>
               <td class="intro-photo">
-                <!-- TODO: images/profile.jpg 를 본인 사진(정사각형 권장)으로 교체 -->
-                <a href="images/profile.jpg"><img alt="Photo of Youngseok Hwang" src="images/profile.jpg"></a>
+                <a href="assets/img/profile.jpg"><img alt="Photo of Youngseok Hwang" src="assets/img/profile.jpg"></a>
               </td>
             </tr>
           </tbody></table>
@@ -61,7 +69,8 @@
               <td class="section-head">
                 <h2>Research</h2>
                 <p>
-                  I'm interested in AI for science, graph representation learning, and tabular data learning.
+                  I'm interested in AI for science and AI for engineering.
+                  I'm also interested in graph representation learning and tabular representation learning.
                   Much of my work is on maritime anomaly detection with spatio-temporal graphs, heterogeneous text-attributed graphs, and 3D CAD reconstruction.
                   In the long run, I want to contribute to physical AI.
                   Some papers are <span class="highlight">highlighted</span>. * denotes equal contribution, &dagger; denotes corresponding author.
@@ -76,23 +85,33 @@
                한 편 = <tr class="paper"> ... </tr> 블록 하나.
                강조하고 싶은 논문은 class="paper highlight-row".
 
-               썸네일 3가지 방식 (paper-thumb 칸 안에서 하나만 사용):
-               (a) 회색 placeholder:   <div class="thumb">KDD '26</div>
-               (b) 이미지 한 장:        <div class="thumb"><img src="images/xxx.png" alt=""></div>
-               (c) 마우스 올리면 바뀌는 before/after (Jon Barron 스타일):
-                   <div class="one">
-                     <div class="two"><img src="images/xxx_after.png" alt=""></div>
-                     <img src="images/xxx_before.png" alt="">
-                   </div>
-                   ※ after 쪽을 mp4로 하려면 <img> 대신
-                     <video muted autoplay loop playsinline><source src="images/xxx.mp4" type="video/mp4"></video>
+               핵심 figure: assets/papers/<이름>.png 를 넣으면 회색 칸 대신 표시됨.
+               잘리지 않고 칸(4:3)에 맞춰 축소되며, 클릭하면 원본 크기로 열림.
+               가로로 긴 figure는 칸에 맞게 한 번 잘라서 넣는 게 잘 보임.
+                 kdd26-maritime      KDD '26
+                 icml26w-cps         ICML '26 Workshop (Domain-Prior)
+                 icml26w-aisflow     ICML '26 Workshop (AISFlow)
+                 neurips25w-stgbench NeurIPS '25 Workshop
+                 access25-stgvad     IEEE Access
+                 aaai25w-asgl        AAAI '25 Workshop
+
+               새 논문 추가 시 thumb 칸:
+                 <div class="thumb"><span>Venue '27</span><img data-src="assets/papers/새이름" alt="Key figure of ..."></div>
+
+               마우스 올리면 바뀌는 before/after (Jon Barron 스타일)로 쓰려면 thumb 칸 대신:
+                 <div class="one">
+                   <div class="two"><img data-src="assets/papers/이름_after" alt=""></div>
+                   <img data-src="assets/papers/이름_before" alt="">
+                 </div>
+               ※ 영상은 자동 로더 대상이 아니므로 경로를 직접 적음:
+                 <video muted autoplay loop playsinline><source src="assets/papers/이름.mp4" type="video/mp4"></video>
                ========================================================= -->
           <table class="block paper-list"><tbody>
 
             <!-- ===== KDD 2026 ===== -->
             <tr class="paper highlight-row">
               <td class="paper-thumb">
-                <div class="thumb">KDD '26</div>
+                <div class="thumb"><span>KDD '26</span><img data-src="assets/papers/kdd26-maritime" alt="Key figure of Redefining Maritime Anomaly Detection via Equation-Grounded Synthetic Anomalies"></div>
               </td>
               <td class="paper-text">
                 <span class="papertitle">Redefining Maritime Anomaly Detection via Equation-Grounded Synthetic Anomalies</span>
@@ -108,7 +127,7 @@
             <!-- ===== ICML 2026 Workshop: Domain-Prior ===== -->
             <tr class="paper">
               <td class="paper-thumb">
-                <div class="thumb">ICML '26<br>Workshop</div>
+                <div class="thumb"><span>ICML '26<br>Workshop</span><img data-src="assets/papers/icml26w-cps" alt="Key figure of Domain-Prior-Regularized Graph Modeling for Anomaly Detection in Cyber-Physical Systems"></div>
               </td>
               <td class="paper-text">
                 <span class="papertitle">Domain-Prior-Regularized Graph Modeling for Anomaly Detection in Cyber-Physical Systems</span>
@@ -123,7 +142,7 @@
             <!-- ===== ICML 2026 Workshop: AISFlow ===== -->
             <tr class="paper">
               <td class="paper-thumb">
-                <div class="thumb">ICML '26<br>Workshop</div>
+                <div class="thumb"><span>ICML '26<br>Workshop</span><img data-src="assets/papers/icml26w-aisflow" alt="Key figure of AISFlow"></div>
               </td>
               <td class="paper-text">
                 <span class="papertitle">AISFlow: Boundary-Informed Flow Matching for Long-Term AIS Trajectory Imputation</span>
@@ -139,7 +158,7 @@
             <!-- ===== NeurIPS 2025 Workshop ===== -->
             <tr class="paper highlight-row">
               <td class="paper-thumb">
-                <div class="thumb">NeurIPS '25<br>Workshop</div>
+                <div class="thumb"><span>NeurIPS '25<br>Workshop</span><img data-src="assets/papers/neurips25w-stgbench" alt="Key figure of Spatio-Temporal Graphs Beyond Grids"></div>
               </td>
               <td class="paper-text">
                 <a href="https://arxiv.org/abs/2512.20086"><span class="papertitle">Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection</span></a>
@@ -156,7 +175,7 @@
             <!-- ===== IEEE Access 2025 ===== -->
             <tr class="paper">
               <td class="paper-thumb">
-                <div class="thumb">IEEE Access</div>
+                <div class="thumb"><span>IEEE Access</span><img data-src="assets/papers/access25-stgvad" alt="Key figure of STGVAD"></div>
               </td>
               <td class="paper-text">
                 <a href="https://ieeexplore.ieee.org/document/11165046"><span class="papertitle">STGVAD: Spatio-Temporal Graph-based Vessel Behavior Anomaly Detection</span></a>
@@ -173,7 +192,7 @@
             <!-- ===== AAAI 2025 Workshop ===== -->
             <tr class="paper">
               <td class="paper-thumb">
-                <div class="thumb">AAAI '25<br>Workshop</div>
+                <div class="thumb"><span>AAAI '25<br>Workshop</span><img data-src="assets/papers/aaai25w-asgl" alt="Key figure of Adaptive Sparsified Graph Learning Framework for Vessel Behavior Anomalies"></div>
               </td>
               <td class="paper-text">
                 <a href="https://arxiv.org/abs/2502.14197"><span class="papertitle">Adaptive Sparsified Graph Learning Framework for Vessel Behavior Anomalies</span></a>
@@ -190,7 +209,61 @@
           </tbody></table>
 
           <!-- =========================================================
-               4. Miscellanea (colored-box rows)
+               4. Experience
+               ---------------------------------------------------------
+               로고: assets/logos/<이름>.png 를 넣으면 회색 이니셜 칸 대신 표시됨.
+               정사각형에 가까운 이미지(여백 있는 것)가 잘 보임.
+                 snu     Seoul National University
+                 kisti   KISTI
+                 etri    ETRI
+
+               새 기관 추가 시 <tr class="exp"> ... </tr> 블록 하나를 복사해서
+               logo 칸의 이니셜과 data-src 이름만 바꾸면 됨.
+               ========================================================= -->
+          <table class="block"><tbody>
+            <tr>
+              <td class="section-head">
+                <h2>Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table class="block exp-list"><tbody>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>SNU</span><img data-src="assets/logos/snu" alt="Seoul National University logo"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://gsds.snu.ac.kr/"><strong>Seoul National University</strong></a>, Graduate School of Data Science
+                <div class="exp-role"><span>Integrated Ph.D. Student, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span><span class="exp-date">Mar 2025 &ndash; Present</span></div>
+                <div class="exp-role"><span>Research Intern, <a href="https://dial.snu.ac.kr/">DIAL Lab</a></span><span class="exp-date">Aug 2024 &ndash; Feb 2025</span></div>
+              </td>
+            </tr>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>KISTI</span><img data-src="assets/logos/kisti" alt="KISTI logo"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://www.kisti.re.kr/eng/"><strong>Korea Institute of Science and Technology Information (KISTI)</strong></a>
+                <div class="exp-role"><span>Research Assistant, Technology Commercialization Research Center</span><span class="exp-date">Feb 2024 &ndash; May 2024</span></div>
+              </td>
+            </tr>
+
+            <tr class="exp">
+              <td class="exp-logo">
+                <div class="logo"><span>ETRI</span><img data-src="assets/logos/etri" alt="ETRI logo"></div>
+              </td>
+              <td class="exp-text">
+                <a href="https://www.etri.re.kr/eng/main/main.etri"><strong>Electronics and Telecommunications Research Institute (ETRI)</strong></a>
+                <div class="exp-role"><span>Research Intern, Fiscal and Economic Policy Intelligence Research Center</span><span class="exp-date">Jul 2023 &ndash; Aug 2023</span></div>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- =========================================================
+               5. Miscellanea (colored-box rows)
                ========================================================= -->
           <table class="block"><tbody>
             <tr>
@@ -254,7 +327,7 @@
           </tbody></table>
 
           <!-- =========================================================
-               5. Footer
+               6. Footer
                ========================================================= -->
           <table class="block"><tbody>
             <tr>
@@ -270,5 +343,6 @@
         </td>
       </tr>
     </tbody></table>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

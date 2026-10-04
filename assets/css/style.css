@@ -221,12 +221,13 @@ tr.highlight-row {
 }
 
 /* ------------------------------------------------------------------
-   Paper thumbnails
-   - .thumb alone  = gray placeholder with venue text
-   - .thumb > img  = a single still image
+   Paper key figures
+   - .thumb > span = gray placeholder with venue text (shown until a figure exists)
+   - .thumb > img  = key figure laid over the placeholder, letterboxed (not cropped)
    - .one / .two   = before/after swap on row hover (Jon's signature effect)
    ------------------------------------------------------------------ */
 .thumb {
+  position: relative;
   width: 160px;
   height: 120px;
   border-radius: 6px;
@@ -237,14 +238,38 @@ tr.highlight-row {
   justify-content: center;
   text-align: center;
   font-size: 13px;
+  overflow: hidden;
+}
+
+.thumb.loaded {
+  background: #fff;
+  box-shadow: 0 0 0 1px #e4e4e4;
 }
 
 .thumb img,
 .thumb video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
   border-radius: 6px;
+}
+
+.thumb a {
+  cursor: zoom-in;
+}
+
+/* Slot images stay hidden until a file actually loads (main.js adds .loaded) */
+.thumb img,
+.logo img {
+  visibility: hidden;
+}
+
+.thumb.loaded img,
+.logo.loaded img {
+  visibility: visible;
 }
 
 .one {
@@ -280,6 +305,66 @@ tr.paper:focus-within .two {
 }
 
 /* ------------------------------------------------------------------
+   Experience: logo + organization, one row per place
+   - .logo > span = initials placeholder (shown until a logo file exists)
+   - .logo > img  = logo laid over the placeholder
+   ------------------------------------------------------------------ */
+.exp-list {
+  border-spacing: 0 4px;
+}
+
+.exp-logo {
+  padding: 8px 16px;
+  width: 64px;
+  vertical-align: middle;
+}
+
+.logo {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.logo.loaded {
+  background: #fff;
+}
+
+.logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.exp-text {
+  padding: 8px;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+.exp-role {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.exp-date {
+  color: #666;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------
    Mobile: stack the intro and each paper row
    ------------------------------------------------------------------ */
 @media (max-width: 600px) {
@@ -305,6 +390,21 @@ tr.paper:focus-within .two {
 
   .misc-label {
     text-align: left;
+  }
+
+  .exp-logo {
+    width: 48px;
+    padding: 8px;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .exp-role {
+    flex-direction: column;
+    gap: 0;
   }
 
   .colored-box {
