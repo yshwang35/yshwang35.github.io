@@ -576,6 +576,19 @@ tr.paper:focus-within .two {
   white-space: nowrap;
 }
 
+/* Text link with a small leading icon (e.g. GitHub mark); the icon follows the link color */
+.icon-link {
+  white-space: nowrap;
+}
+
+.icon-link svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 4px;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
 /* Gray sub-line under an entry (advisor, instructor) */
 .sub {
   color: var(--muted);
