@@ -171,7 +171,7 @@ h2[id] {
   font-weight: 700;
 }
 
-@media (min-width: 1340px) {
+@media (min-width: 1370px) {
   .corner {
     position: fixed;
   }
